@@ -1,4 +1,13 @@
-FROM ubuntu:16.10
+# 1.17.02
+# FROM ubuntu:16.10
+# can not use pandoc-plantuml-filter
+
+# 1.16.0.2
+# FROM ubuntu:16.04
+# can not use pandoc-plantuml-filter
+
+# 1.13.2.1
+FROM ubuntu:15.10
 
 MAINTAINER yoshitake.hamano "oed0cow6oy5@gmail.com"
 
@@ -33,6 +42,7 @@ RUN apt-get install -y plantuml
 RUN add-apt-repository 'deb http://ppa.launchpad.net/kbonne/pandoc-plantuml-filter/ubuntu utopic main'
 RUN apt-get update -qq
 RUN apt-get install -y --allow-unauthenticated pandoc-plantuml-filter
+
 
 # Cleaning
 RUN apt-get clean
