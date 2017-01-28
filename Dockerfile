@@ -19,8 +19,10 @@ RUN apt-get install -y texlive
 RUN apt-get install -y texlive-lang-japanese
 RUN apt-get install -y texlive-luatex
 RUN apt-get install -y texlive-latex-extra
+# fix "! LaTeX Error: File `xunicode.sty' not found."
+RUN apt-get install -y texlive-xetex
 RUN apt-get install -y fontforge
-RUN apt-get install -y wget
+RUN apt-get install -y wget unzip
 RUN apt-get install -y git
 
 # fonts
