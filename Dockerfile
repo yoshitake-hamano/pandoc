@@ -26,15 +26,14 @@ RUN apt-get install -y wget unzip
 RUN apt-get install -y git
 
 # fonts
-RUN mkdir -p ~/.fonts
 RUN git clone git://github.com/google/fonts.git
-RUN cp fonts/ofl/inconsolata/*.ttf ~/.fonts
+RUN cp fonts/ofl/inconsolata/*.ttf /usr/share/fonts/truetype/
 RUN wget 'https://osdn.net/frs/redir.php?m=jaist&f=%2Fmix-mplus-ipa%2F63545%2Fmigu-1m-20150712.zip' -O migu-1m-20150712.zip
 RUN unzip migu-1m-20150712.zip
-RUN cp migu-1m-20150712/*.ttf ~/.fonts
+RUN cp migu-1m-20150712/*.ttf /usr/share/fonts/truetype/
 RUN git clone git://github.com/chitoku-k/Ricty.git
 RUN cd Ricty; sh ricty_generator.sh auto
-RUN cp Ricty/*.ttf ~/.fonts
+RUN cp Ricty/*.ttf /usr/share/fonts/truetype/
 
 # pandoc
 RUN apt-get install -y pandoc pandoc-citeproc python-pandocfilters
