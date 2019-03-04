@@ -35,7 +35,7 @@ RUN apt-get install -y python-pygraphviz
 RUN apt-get install -y software-properties-common
 RUN apt-get install -y plantuml
 RUN apt-get install -y python-pip
-RUN pip install pandoc-plantuml-filter
+RUN pip install pandocfilters
 
 
 # Cleaning
